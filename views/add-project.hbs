@@ -1,0 +1,67 @@
+{{#> layout title='Add Project' user=user}}
+
+<main>
+  <section class="project-container">
+    <form enctype="multipart/form-data" id="updateProjectForm" action="/add-project" method="post" class="project-form">
+      <h1>ADD PROJECT</h1>
+
+      <div class="input-box">
+        <label for="project-name">Project Name</label>
+        <input type="text" id="project_name" name="project_name" required />
+      </div>
+
+      <div class="column">
+        <div class="input-box">
+          <label for="start-date">Start Date</label>
+          <input type="date" id="start_date" name="start_date" required />
+        </div>
+        <div class="input-box">
+          <label for="end-date">End Date</label>
+          <input type="date" id="end_date" name="end_date" required />
+        </div>
+      </div>
+
+      <div class="input-box">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+      </div>
+
+      <div class="tech-box">
+        <label>Technologies</label>
+        <div class="tech-option">
+          <div class="tech">
+            <input type="checkbox" id="check-nodejs" name="tech" value="check-nodejs" />
+            <label for="check-nodejs">Node Js</label>
+          </div>
+          <div class="tech">
+            <input type="checkbox" id="check-reactjs" name="tech" value="check-reactjs" />
+            <label for="check-reactjs">React Js</label>
+          </div>
+          <div class="tech">
+            <input type="checkbox" id="check-nextjs" name="tech" value="check-nextjs" />
+            <label for="check-nextjs">Next Js</label>
+          </div>
+          <div class="tech">
+            <input type="checkbox" id="check-typescript" name="tech" value="check-typescript" />
+            <label for="check-typescript">Typescript</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="upload-box">
+        <label for="image" class="form-label">Upload Image</label>
+        <input name='image' class="form-control" type="file" id="image">
+      </div>
+
+      <div>
+        <img src="#" alt="image preview" id="preview" class="img-thumbnail d-none"
+          style="max-height: 220px; margin-top: 10px;">
+      </div>
+
+      <button type="button" id="saveBtn" class="post-btn">Submit</button>
+    </form>
+  </section>
+
+</main>
+<script src="/assets/js/image-preview.js"></script>
+{{/layout}}

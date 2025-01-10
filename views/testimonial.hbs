@@ -1,0 +1,30 @@
+{{#> layout title='Testimonial'}}
+<h1 class="text-center m-4">My Testimonials</h1>
+<h1 class="text-center p-4">Rating by Star</h1>
+
+<div class="container-sm text-center">
+  <button type="button" onclick="showAllTestimonials()" class="btn btn-outline-primary">
+    All
+  </button>
+  <button type="button" onclick="filterTestimonialByStar(1)" class="btn btn-outline-primary">
+    ⭐
+  </button>
+  <button type="button" onclick="filterTestimonialByStar(2)" class="btn btn-outline-primary">
+    ⭐⭐
+  </button>
+  <button type="button" onclick="filterTestimonialByStar(3)" class="btn btn-outline-primary">
+    ⭐⭐⭐
+  </button>
+  <button type="button" onclick="filterTestimonialByStar(4)" class="btn btn-outline-primary">
+    ⭐⭐⭐⭐
+  </button>
+  <button type="button" onclick="filterTestimonialByStar(5)" class="btn btn-outline-primary">
+    ⭐⭐⭐⭐⭐
+  </button>
+</div>
+
+<div id="testimonialsContainer" class="container-xl text-center m-5 row mx-auto">
+  <p>No testimonials.</p>
+</div>
+<script src="/assets/js/testimonial.js"></script>
+{{/layout}}

@@ -1,0 +1,26 @@
+{{#> layout title='Contact'}}
+<div class="form-container">
+  <form id="contactForm">
+    <h1>GET IN TOUCH</h1>
+
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" />
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" />
+
+    <label for="telp">Phone Number</label>
+    <input type="tel" name="telp" id="telp" />
+
+    <label for="subject">Subject</label>
+    <input name="subject" id="subject">
+    </input>
+
+    <label for="message">Your Message</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+</div>
+<script src="/assets/js/contactForm.js"></script>
+{{/layout}}

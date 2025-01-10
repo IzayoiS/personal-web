@@ -1,0 +1,39 @@
+{{#> layout title='Login'}}
+<main>
+  <section class="login-container">
+    <form id="loginForm" action="/login" method="post" class="login-form">
+      <h1>Login</h1>
+
+      <div class="input-box">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+      <div class="input-box">
+        <label for="password">Password</label>
+        <div class="password-container">
+          <input type="password" id="password" name="password" required />
+          <button class="btn btn-outline-secondary password-toggle" type="button" id="togglePassword">
+            <i class="fa-solid fa-eye" id="eye-icon"></i>
+          </button>
+        </div>
+      </div>
+
+      {{#if messages.error}}
+      <div class="alert alert-danger mt-3" role="alert">
+        {{messages.error}}
+      </div>
+      {{/if}}
+
+      {{#if messages.success}}
+      <div class="alert alert-success mt-3" role="alert">
+        {{messages.success}}
+      </div>
+      {{/if}}
+
+      <button type="button" id="saveLogin" class="login-btn">Submit</button>
+    </form>
+  </section>
+
+</main>
+<script src="/assets/js/saveLogin.js"></script>
+{{/layout}}

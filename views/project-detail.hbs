@@ -1,0 +1,19 @@
+{{#> layout title='Project Detail' user=user}}
+<main>
+  <section>
+    <div class="project-detail-container">
+      <h1 class="my-4">{{ data.project_name }}</h1>
+      <div class="project-detail-content">
+        <img src="{{ data.image }}" alt="project detail" class="project-detail-img">
+        <div class="added-info">
+          <p><i class="fa-solid fa-calendar-days"></i> Added: {{ formatDateToWIB data.createdAt }}</p>
+          <p><i class="fa-regular fa-calendar-check"></i> Durasi: {{ data.duration }} Bulan</p>
+          <p><i class="fa-regular fa-user"></i> {{ data.user.username }}</p>
+        </div>
+        <p class="project-detail-description">{{ data.description }}</p>
+        <p class="icon-tech">Technologies: {{{ renderTechIcons data.technologies }}}</p>
+      </div>
+    </div>
+  </section>
+</main>
+{{/layout}}

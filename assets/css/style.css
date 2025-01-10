@@ -1,6 +1,5 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #fff;
   margin: 0;
   padding: 0;
 }
@@ -8,22 +7,25 @@ body {
 li,
 a,
 button {
-  text-decoration: none;
-}
-
-header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  background-color: #a2d6f9;
-  padding: 10px 4%;
+  text-decoration: none !important;
 }
 
 *:focus {
   outline: none;
 }
 
+.form-control,
+input[type="file"]:focus {
+  box-shadow: none !important;
+  outline: none !important;
+  border: 1px solid #ccc;
+}
+
 /* Navbar */
+
+.bg-custom {
+  background-color: #a2d6f9;
+}
 
 .logo {
   cursor: pointer;
@@ -32,9 +34,6 @@ header {
   color: blue;
 }
 
-.logo a {
-  color: blue;
-}
 .nav_link {
   list-style: none;
 }
@@ -49,10 +48,16 @@ header {
   transition: all 0.3s ease;
 }
 
-.nav_link li a:hover,
-.nav_link li a.active {
+/* .nav_link li a:hover,
+.nav_link li a:is(:link, :active, :visited).active {
   font-weight: bold;
-  color: darkorange;
+  color: #212121 !important;
+} */
+
+.nav-link.active,
+.nav-link.active:hover {
+  color: #9207e2 !important;
+  font-weight: bold;
 }
 
 .ctm {
@@ -76,7 +81,7 @@ header {
 
 /* Biodata */
 
-.container {
+.profile-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -105,22 +110,22 @@ header {
 
 a.btn-contact {
   display: inline-block;
+  align-items: center;
   text-align: center;
   line-height: 37px;
   width: 100px;
-  height: 38px;
+  height: 43px;
   border-radius: 20px;
-  background-color: black;
+  background-color: #2196f3;
   color: white;
   margin-bottom: 15px;
-  border: 2px solid black;
   transition: all 0.3s ease;
 }
 
 a.btn-contact:hover {
-  background-color: white;
+  background-color: #1565c0;
   border-color: black;
-  color: black;
+  color: white;
 }
 
 .btn-cv {
@@ -144,6 +149,11 @@ a.btn-contact:hover {
   background-color: white;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
   text-align: center;
+}
+
+.profile-card h3 {
+  margin-top: 9px;
+  font-size: 24px;
 }
 
 .profile-card img {
@@ -201,8 +211,15 @@ a.btn-contact:hover {
 
 /* Project */
 
+.projects {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+}
+
 .project-container {
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
   display: flex;
   justify-content: center;
   font-weight: bold;
@@ -340,8 +357,10 @@ a.btn-contact:hover {
 
 /* Project List */
 
-.project-list-title {
+.project-list-title,
+.text-empty-msg {
   text-align: center;
+  margin-top: 10px;
 }
 
 .project-container h2 {
@@ -426,7 +445,8 @@ a.btn-contact:hover {
   margin: 0 10px;
 }
 
-.card-actions button {
+.card-actions button,
+.card-actions a {
   padding: 5px 20px;
   border: none;
   border-radius: 7px;
@@ -437,9 +457,186 @@ a.btn-contact:hover {
 .edit-btn {
   background-color: #007bff;
   color: #fff;
+  height: 70%;
 }
 
 .delete-btn {
   background-color: #e3342f;
   color: #fff;
+}
+
+/* Project Detail */
+
+.project-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-detail-content {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.project-detail-img {
+  margin: auto;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.added-info {
+  display: flex;
+  font-size: 14px;
+  gap: 15px;
+}
+
+.icon-tech {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  gap: 20px;
+}
+
+.project-detail-description {
+  text-align: justify;
+  font-size: 24px;
+}
+
+/* Register */
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.register-container .register-form {
+  margin-top: 20px;
+}
+
+.register-form h1 {
+  text-align: center;
+}
+
+.register-form .input-box {
+  margin-top: 10px;
+  width: 500px;
+}
+
+.input-box .password-container {
+  position: relative;
+  width: 100%;
+}
+
+.input-box .password-container input {
+  width: 100%;
+  padding-right: 40px; /* Berikan ruang untuk ikon mata */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.input-box .password-container .password-toggle {
+  position: absolute;
+  top: 40%;
+  right: 10px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+}
+
+.input-box .password-container .password-toggle:hover {
+  color: #333;
+}
+
+.register-form .input-box label {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.register-form .input-box input,
+.register-form .input-box textarea {
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.register-btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  width: 100px;
+  height: 38px;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+/* Login */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.login-container .login-form {
+  margin-top: 20px;
+}
+
+.login-form h1 {
+  text-align: center;
+}
+
+.login-form .input-box {
+  margin-top: 10px;
+  width: 500px;
+}
+
+.login-form .input-box label {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.login-form .input-box input,
+.login-form .input-box textarea {
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.login-btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  width: 100px;
+  height: 38px;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }

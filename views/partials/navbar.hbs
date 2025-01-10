@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg bg-custom p-3 ">
+  <div class="container-fluid mx-5">
+    <a class="logo text-decoration-none" href="/">Iqbal</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse fw-medium" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-5">
+        <li class="nav-item mx-2">
+          <a class="nav-link {{#if (equal currentPage 'Home')}}active{{/if}}" href="/">Home</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link {{#if (equal currentPage 'Project')}}active{{/if}}" href="/project">My Project</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link {{#if (equal currentPage 'Testimonial')}}active{{/if}}" href="/testimonial">Testimonial</a>
+        </li>
+      </ul>
+
+      <div class="ms-auto">
+        {{#if user }}
+        <div class="text-center mx-2 d-inline">
+          <i class="fa-regular fa-user">
+          </i>
+          {{ user.username }}
+        </div>
+        <a class="btn btn-danger text-white m-auto d-inline mx-2" href="/logout">Logout</a>
+        {{else }}
+        <a class="text-secondary-emphasis m-auto d-inline mx-2 nav-link {{#if (equal currentPage 'Register')}}active{{/if}}"
+          href="/register">Register</a>
+        <a class="text-secondary-emphasis m-auto d-inline mx-4 nav-link {{#if (equal currentPage 'Login')}}active{{/if}}"
+          href="/login">Login</a>
+        {{/if }}
+        <a class="btn btn-outline-primary text-black" href="/contact">Contact Me</a>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,57 @@
+{{#> layout title='Project' user=user}}
+<main>
+  <section class="projects">
+    <div class="d-flex mt-5">
+      {{#if user }}
+      <a class="btn btn-outline-primary ms-auto text-black me-sm-2" href="/add-project">New Project</a>
+      {{/if }}
+    </div>
+
+    <h2 class="project-list-title">MY PROJECT</h2>
+    {{#if project.length}}
+    <div id="project-list" class="project-list">
+      {{#each project}}
+      <div class="card">
+        <img src={{ this.image }} alt="Project Image" class="card-image" />
+        <h3><a href="/project-detail/{{ id }}">{{ this.project_name }}</a></h3>
+        <p><strong>Durasi:</strong> {{ this.duration }} bulan</p>
+        <p><strong>Added:</strong> {{ formatDateToWIB this.createdAt }}</p>
+        <p><strong>Last Edit:</strong> {{formatDateToWIB this.updatedAt}}</p>
+        <p>{{this.description}}</p>
+        <div class="tech-icons">
+          {{{ renderTechIcons this.technologies }}}
+        </div>
+        <p><i>{{ this.user.username }}</i></p>
+        <p class="relative-time">{{getRelativeTime this.updatedAt}}</p>
+        {{#if (equal ../user.id this.user_id) }}
+        <div class="card-actions">
+          <a href="/edit-project/{{ id }}" class="edit-btn">Edit</a>
+          <form class="delete-form" action="/delete-project/{{id}}?_method=DELETE" method="post">
+            <button type="button" class="delete-btn">Delete</button>
+          </form>
+        </div>
+        {{/if }}
+      </div>
+      {{/each}}
+      {{else}}
+      <p class="text-empty-msg">Belum ada project yang di post</p>
+      {{/if}}
+    </div>
+  </section>
+</main>
+<script>
+  document.querySelectorAll(".delete-btn").forEach((btn) =>
+    btn.addEventListener("click", () =>
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#3085d6",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => result.isConfirmed && btn.closest(".delete-form").submit())
+    )
+  );
+</script>
+{{/layout}}

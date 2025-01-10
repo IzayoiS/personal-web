@@ -1,0 +1,38 @@
+{{#> layout title='Register'}}
+<main>
+  <section class="register-container">
+    <form id="registerForm" action="/register" method="post" class="register-form">
+      <h1>Register</h1>
+
+      <div class="input-box">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+      <div class="input-box">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="input-box">
+        <label for="password">Password</label>
+        <div class="password-container">
+          <input type="password" id="password" name="password" required />
+          <button class="btn btn-outline-secondary password-toggle" type="button" id="togglePassword">
+            <i class="fa-solid fa-eye" id="eye-icon"></i>
+          </button>
+        </div>
+      </div>
+
+      {{#if messages.error}}
+      <div class="alert alert-danger mt-3" role="alert">
+        {{messages.error}}
+      </div>
+      {{/if}}
+
+
+      <button type="button" id="saveRegist" class="register-btn">Submit</button>
+    </form>
+  </section>
+
+</main>
+<script src="/assets/js/saveRegist.js"></script>
+{{/layout}}
