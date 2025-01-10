@@ -1,15 +1,15 @@
 {
-  "name": "day-5",
+  "name": "personal-website",
   "version": "1.0.0",
-  "main": "async-promise.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "migrate": "npx sequelize-cli db:migrate",
     "seed": "npx sequelize-cli db:seed:all",
     "migrate:undo": "npx sequelize-cli db:migrate:undo:all"
   },
-  "author": "",
+  "author": "Iqbal Muhammad Hasbi",
   "license": "ISC",
   "description": "",
   "dependencies": {

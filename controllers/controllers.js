@@ -120,9 +120,7 @@ async function updateProjects(req, res) {
 
   console.log("result update : ", result);
 
-  // res.render("project", { user });
   req.session.user = user;
-
   res.redirect("/project");
 }
 
@@ -184,11 +182,11 @@ async function authRegister(req, res) {
 
   if (existingUser) {
     if (existingUser.email === email) {
-      req.flash("error", "Email sudah digunakan");
+      req.flash("error", "Email Already in Use.");
     }
 
     if (existingUser.username === username) {
-      req.flash("error", "Username sudah digunakan");
+      req.flash("error", "Username Already Taken.");
     }
 
     return res.redirect("/register");
@@ -202,7 +200,7 @@ async function authRegister(req, res) {
     password: hashedPassword,
   });
 
-  req.flash("success", "Berhasil mendaftar. Silahkan login.");
+  req.flash("success", "Registration successful! Please log in to continue.");
   res.redirect("/login");
 }
 
@@ -220,14 +218,14 @@ async function authLogin(req, res) {
   });
 
   if (!existingUser) {
-    req.flash("error", "Email/username tidak ditemukan");
+    req.flash("error", "Username Not Found");
     return res.redirect("/login");
   }
 
   const isInvalid = await bcrypt.compare(password, existingUser.password);
 
   if (!isInvalid) {
-    req.flash("error", "Username/password salah");
+    req.flash("error", "Incorrect Username/Password");
     return res.redirect("/login");
   }
 
@@ -235,7 +233,7 @@ async function authLogin(req, res) {
   delete userObject.password;
   req.session.user = userObject;
 
-  console.log(`user ${username || email} berhasil login`);
+  console.log(`User ${username || email} Logged In`);
 
   res.redirect("/");
 }

@@ -48,12 +48,6 @@ input[type="file"]:focus {
   transition: all 0.3s ease;
 }
 
-/* .nav_link li a:hover,
-.nav_link li a:is(:link, :active, :visited).active {
-  font-weight: bold;
-  color: #212121 !important;
-} */
-
 .nav-link.active,
 .nav-link.active:hover {
   color: #9207e2 !important;
@@ -64,19 +58,8 @@ input[type="file"]:focus {
   margin-left: auto;
 }
 
-.btn-cm {
-  padding: 9px 22px;
-  background-color: black;
-  color: white;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
 .btn-cm:hover {
-  background-color: white;
-  border-color: black;
-  color: black;
+  color: white !important;
 }
 
 /* Biodata */

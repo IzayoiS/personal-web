@@ -25,14 +25,14 @@
           </i>
           {{ user.username }}
         </div>
-        <a class="btn btn-danger text-white m-auto d-inline mx-2" href="/logout">Logout</a>
+        <a class="btn btn-primary text-white m-auto d-inline mx-2" href="/logout">Logout</a>
         {{else }}
         <a class="text-secondary-emphasis m-auto d-inline mx-2 nav-link {{#if (equal currentPage 'Register')}}active{{/if}}"
           href="/register">Register</a>
         <a class="text-secondary-emphasis m-auto d-inline mx-4 nav-link {{#if (equal currentPage 'Login')}}active{{/if}}"
           href="/login">Login</a>
         {{/if }}
-        <a class="btn btn-outline-primary text-black" href="/contact">Contact Me</a>
+        <a class="btn btn-outline-primary text-secondary-emphasis btn-cm" href="/contact">Contact Me</a>
       </div>
     </div>
   </div>
