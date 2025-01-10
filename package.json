@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
+    "postinstall": "sequelize db:migrate",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "migrate": "npx sequelize-cli db:migrate",
-    "seed": "npx sequelize-cli db:seed:all",
-    "migrate:undo": "npx sequelize-cli db:migrate:undo:all"
+    "start": "node server.js"
   },
   "author": "Iqbal Muhammad Hasbi",
   "license": "ISC",
