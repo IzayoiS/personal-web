@@ -2,9 +2,12 @@ const express = require("express");
 const session = require("express-session");
 const methodOverride = require("method-override");
 const path = require("path");
-require("dotenv").config();
 const upload = require("./middlewares/upload-file");
 const flash = require("express-flash");
+
+require("dotenv").config();
+const env = process.env.NODE_ENV;
+const sequelize = new Sequelize(config[env]);
 
 const {
   formatDateToWIB,

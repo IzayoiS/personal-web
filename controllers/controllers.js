@@ -5,10 +5,10 @@ const { projects, User } = require("../models");
 const bcrypt = require("bcrypt");
 const config = require("../config/config");
 
-require("dotenv").config();
+// require("dotenv").config();
 
-const env = process.env.NODE_ENV;
-const sequelize = new Sequelize(config[env]);
+// const env = process.env.NODE_ENV;
+// const sequelize = new Sequelize(config[env]);
 
 function renderHome(req, res) {
   const { user } = req.session;
