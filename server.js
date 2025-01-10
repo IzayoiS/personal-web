@@ -5,6 +5,7 @@ const path = require("path");
 const upload = require("./middlewares/upload-file");
 const flash = require("express-flash");
 const { Sequelize } = require("sequelize");
+const config = require("../config/config");
 
 require("dotenv").config();
 const env = process.env.NODE_ENV;
