@@ -3,7 +3,7 @@ const { calculateDuration } = require("../utils/time");
 const { Sequelize, QueryTypes, Op } = require("sequelize");
 const { projects, User } = require("../models");
 const bcrypt = require("bcrypt");
-const config = require("../config/config.json");
+const config = require("../config/config");
 
 require("dotenv").config();
 
