@@ -35,7 +35,7 @@ const {
 } = require("./controllers/controllers");
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.POSTGRES_PORT;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
